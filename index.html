@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700;800&family=Sen:wght@700&display=swap" rel="stylesheet">
+    <title>Screenfuze.HQ</title>
+    <script src="https://kit.fontawesome.com/dc49a974a4.js" crossorigin="anonymous"></script>
+</head>
+<style>
+
+.featured-content {
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between; /* Aligns content and video player */
+    align-items: center;
+    padding: 40px; /* Adjust padding as needed */
+    margin-bottom: 40px; /* Adjust margin as needed */
+}
+
+.featured-details {
+    flex: 1; /* Takes remaining space */
+}
+
+.video-player {
+    width: 50%; /* Adjust width as needed */
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+/* Additional CSS for the video player styling */
+.video-player video {
+    width: 100%;
+    height: auto;
+}
+
+.profiles-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+}
+
+.pics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the images and names horizontally */
+}
+
+.profile-picture {
+    margin-bottom: 5px; /* Adds spacing between each image and name */
+}
+
+</style>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container"><h1 class="logo">Screenfuze.HQ</h1></div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active" id="buttonAll">All</li>
+                    <li class="menu-list-item" id="buttonReleases">New Releases</li>
+                    <li class="menu-list-item" id="buttonAnimes">Animes</li>
+                    <li class="menu-list-item" id="buttonPopular">Popular</li>
+                </ul>
+            </div>
+            <div class="profile-container" id="profile-text-selected">
+                <img class="profile-picture" src="img/profile.jpg" alt="" id="profile-picture">
+                <div class="profile-text-container">
+                    <span class="profile-text">Room</span>
+                    <i class="fa-solid fa-caret-down" id="downarrow"></i>
+                    <i class="fa-solid fa-caret-up" id="uparrow"></i>
+                </div>
+                </div>
+                <div class="toggle">
+                    <i class="fa-solid fa-moon toggle-icon"></i>
+                    <i class="fa-solid fa-sun toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <i class="left-menu-icon fa-solid fa-magnifying-glass" id="searchSomething"></i>
+        <i class="left-menu-icon fa-solid fa-house" id="buttonHome"></i>
+    </div>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="profiles-pic" id="container-profile-selected">
+                <div class="pics-container">
+                    <img class="profile-picture profile-select" src="img/profile1.jpg" alt=""> nimish
+                    <img class="profile-picture profile-select" src="img/profile2.jpg" alt=""> archit
+                    <img class="profile-picture profile-select" src="img/profile3.jpg" alt=""> bhavit
+                </div>
+            </div>
+            <div class="search-container" id="searchContainer">
+                <div class="inputSearch">
+                    <input type="text" id="inputId" placeholder="Search movies, series or animes titles">
+                    <i class="left-menu-icon fa-solid fa-magnifying-glass" id="verifyText"></i>
+                </div>
+                <h1 id="Error"></h1>
+                <div class="movie-chosen" id="displayMovieChose">
+                    <h1 id="TitleSearch"></h1>
+                    <img src="" alt="" class="movie-list-item-img search" id="ImgSearch">
+                    <p id="DescSearch"></p>
+                    <button class="featured-button" onclick="isTest()">Watch</button>
+                </div>
+            </div>
+            <div class="featured-content"
+            style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-2.jpg')">
+            <!-- Featured content details -->
+            <div class="featured-details">
+                <img src="img/f-t-2.png" alt="" class="featured-title">
+                <p class="featured-desc">A missing child sets four families on a frantic hunt for answers as they unearth a mind-bending mystery that spans three generations.</p>
+                <button class="featured-button" onclick="playFeaturedVideo()">Watch</button>
+            </div>
+
+            <!-- Video player -->
+            <div class="video-player">
+                <!-- Here you can insert your video player code -->
+                <!-- For example, you can use the HTML5 video element -->
+                <video id="featured-video" controls>
+                    <source src="thedarkmovietrailer.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">For you</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img src="img/1.jpeg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">"Her" explores love, loneliness, and the complexities of human connection through the unconventional relationship between a man and an advanced artificial intelligence operating system.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/2.jpeg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Star Wars</span>
+                            <p class="movie-list-item-desc">"Star Wars" is a timeless epic space opera that follows the journey of a young farm boy who becomes embroiled in a galaxy-wide conflict between the forces of good and evil, featuring iconic characters, thrilling adventures, and epic battles.</p>
+                            <button class="movie-list-item-button" onclick="isTest()" >Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/3.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Storm</span>
+                            <p class="movie-list-item-desc">"Storm" is a gripping thriller that follows a prosecutor's quest for justice as he unravels a web of corruption and conspiracy surrounding a war criminal's trial at the International Criminal Court.</p>
+                            <button class="movie-list-item-button" onclick="isTest()" >Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/4.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">1917</span>
+                            <p class="movie-list-item-desc">"1917" is a visually stunning and immersive war drama that unfolds in real-time, following two British soldiers tasked with delivering a critical message across enemy lines during World War I, navigating through the harrowing landscapes of the Western Front.</p>
+                            <button class="movie-list-item-button" onclick="isTest()" >Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/5.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">The Avengers</span>
+                            <p class="movie-list-item-desc">"The Avengers" is an action-packed superhero ensemble film that brings together iconic Marvel characters to save the world from a powerful threat, showcasing thrilling battles, witty banter, and dynamic team dynamics.</p>
+                            <button class="movie-list-item-button" onclick="isTest()" >Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/6.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Rampage</span>
+                            <p class="movie-list-item-desc">"Rampage" is a high-octane action-adventure film based on the classic arcade game, following a primatologist who must stop a genetically engineered gorilla, alongside other mutated creatures, from wreaking havoc on a city.</p>
+                            <button class="movie-list-item-button" onclick="isTest()" >Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/7.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Ender's Game</span>
+                            <p class="movie-list-item-desc">"Ender's Game" is a sci-fi adventure that follows a gifted young boy recruited by the military to train for an impending alien invasion, navigating through complex moral dilemmas and strategic challenges in a futuristic battle school.</p>
+                            <button class="movie-list-item-button" onclick="isTest()" >Watch</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Populars</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img src="img/8.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Oblivion</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()" >Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/9.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Hobbit</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()" >Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/10.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Due Date</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/11.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Dark</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/12.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Emoji Movie</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/13.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">1920</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/14.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Paths of Glory</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="featured-content"
+            style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-1.jpg')">
+                <img src="img/f-t-1.png" alt="" class="featured-title">
+                <p class="featured-desc">A normal young man that lives his normal life in the modern Japan, Natsuki Subaru. However, one day, he is summoned to another world. Without knowing the person that summoned him, or the reason for being summoned in the new world, he soon befriends a silver-haired-half-elf girl, Emilia.</p>
+                <button class="featured-button" onclick="isTest()">Watch</button>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">New Release</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img src="img/15.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Lego Batman</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/16.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">1920 London</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/17.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Aquaman</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/18.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Dahmer</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/19.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Spider Man</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/20.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Re: Zero</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/21.png" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Sword of the Stranger</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Animes</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img src="img/22.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Spy x Family</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/23.jpe" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Demon Slayer</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/24.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Bunny Girl Senpai</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/20.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Re: Zero</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/25.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Quintuples</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/26.jpg" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Komi-san wa</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="img/21.png" alt="" class="movie-list-item-img">
+                            <span class="movie-list-item-title">Sword of the Stranger</span>
+                            <p class="movie-list-item-desc">Amidst the shadows of a forgotten past, a single spark ignites a chain reaction of perilous events, unveiling the sinister depths of human nature.</p>
+                            <button class="movie-list-item-button" onclick="isTest()">Watch</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </div>
+            </div>
+        </div>
+        <!-- <footer class="copyright">
+            <p>&copy; Copyright Archit Surmal | All Rights Reserved <span id="ano"></span></p>
+        </footer> -->
+    </div>
+    <script src="app.js"></script>
+    <script>
+        const year = document.querySelector('#ano');
+        ano.innerHTML = new Date().getFullYear();
+    </script>
+    <script>
+        function playFeaturedVideo() {
+            // Get the video element by its id
+            var video = document.getElementById('featured-video');
+            
+            // Play the video
+            video.play();
+        }
+    </script>    
+</body>
+</html> 
